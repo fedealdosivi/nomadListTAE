@@ -6,7 +6,4 @@ import org.openqa.selenium.support.FindBy;
 
 public class NomadListPage extends Page {
 
-    @FindBy(tagName = "html")
-    private WebElement html;
-
 }

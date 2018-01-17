@@ -48,6 +48,11 @@ public abstract class CommonOperations {
         element.click();
     }
 
+    protected void submit(WebElement element) {
+        waitFor(elementToBeClickable(element));
+        element.submit();
+    }
+
     protected String getText(WebElement element) {
         waitFor(visibilityOf(element));
         return element.getText();
