@@ -11,7 +11,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllE
 
 public class GridCities extends NomadListPage {
 
-    @FindBy(css = ".grid show view > li")
+    @FindBy(css = ".grid show view > div")
     List<WebElement> cities;
 
     public List<Cities> getCities(){
