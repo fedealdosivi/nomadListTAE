@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>uitest</artifactId>
+    <artifactId>nomad</artifactId>
     <packaging>jar</packaging>
 
-    <name>uitest</name>
+    <name>nomad</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -19,5 +19,10 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>nomadlist</groupId>
+            <artifactId>framework</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>
