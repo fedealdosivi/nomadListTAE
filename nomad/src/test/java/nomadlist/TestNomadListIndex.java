@@ -4,6 +4,10 @@ import WebDriver.Page;
 import WebDriver.WebTest;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.isEmptyString;
+
 public class TestNomadListIndex extends WebTest<HomePage>{
 
     @Override
@@ -24,6 +28,6 @@ public class TestNomadListIndex extends WebTest<HomePage>{
                     .getCities()
                     .get(2);
 
-            city.select();
+            assertThat("City has a name",city.select().getName(),not(isEmptyString()));
     }
 }
