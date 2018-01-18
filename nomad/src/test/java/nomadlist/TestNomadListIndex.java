@@ -18,12 +18,12 @@ public class TestNomadListIndex extends WebTest<HomePage>{
 
     @Test
     public void TestSearchArgentinaCities(){
-            Cities cities= getInitialPage()
+            Cities city = getInitialPage()
                     .getNavSearch()
                     .search("Argentina")
                     .getCities()
-                    .get(6);
+                    .get(2);
 
-            cities.select();
+            city.select();
     }
 }

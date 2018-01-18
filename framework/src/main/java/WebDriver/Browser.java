@@ -27,20 +27,6 @@ public enum Browser implements Initializable, HasCapabilities, Logging {
         public Capabilities getCapabilities() {
             return DesiredCapabilities.chrome();
         }
-    },
-
-    FIREFOX {
-        @Override
-        public void initialize(){
-            INITIALIZED.computeIfAbsent(ordinal(),n ->{
-                FirefoxDriverManager.getInstance().setup();
-                return true;
-            });
-        }
-        @Override
-        public Capabilities getCapabilities() {
-            return DesiredCapabilities.firefox();
-        }
     };
 
     private static final Map<Integer, Boolean> INITIALIZED = new ConcurrentHashMap<>();

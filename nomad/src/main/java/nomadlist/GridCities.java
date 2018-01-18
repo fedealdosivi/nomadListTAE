@@ -11,8 +11,10 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllE
 
 public class GridCities extends NomadListPage {
 
-    @FindBy(css = ".grid show view > div")
-    List<WebElement> cities;
+    //@FindBy(css = ".grid show view > div")
+    //@FindBy(css = "div.grid.show.view > div.container.lazyloaded")
+    @FindBy(css="div.item.show > div.container.lazyloaded")
+    private List<WebElement> cities;
 
     public List<Cities> getCities(){
         waitFor(visibilityOfAllElements(cities));
