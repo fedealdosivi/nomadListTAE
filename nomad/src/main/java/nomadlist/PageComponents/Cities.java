@@ -1,17 +1,16 @@
-package nomadlist;
+package nomadlist.PageComponents;
 
 import WebDriver.Component;
+import nomadlist.landing.CityDetails;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
 
 public class Cities extends Component {
 
     @FindBy(className = "click")
-    WebElement cityLink;
+    private WebElement cityLink;
 
-    protected Cities(WebElement container) {
+    public Cities(WebElement container) {
         super(container);
     }
 

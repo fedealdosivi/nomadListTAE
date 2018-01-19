@@ -1,6 +1,8 @@
-package nomadlist;
+package nomadlist.landing;
 
-import WebDriver.Page;
+import nomadlist.PageComponents.Cities;
+import nomadlist.PageComponents.NavSearch;
+import nomadlist.NomadListPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -12,7 +14,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllE
 public class HomePage extends NomadListPage {
 
     @FindBy(className = "search-container")
-    WebElement searchBar;
+    private WebElement searchBar;
 
     @FindBy(css="div.item.show > div.container.lazyloaded")
     private List<WebElement> cities;

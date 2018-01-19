@@ -1,6 +1,7 @@
-package nomadlist;
+package nomadlist.landing;
 
-import WebDriver.Component;
+import nomadlist.PageComponents.Cities;
+import nomadlist.NomadListPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

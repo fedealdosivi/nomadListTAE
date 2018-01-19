@@ -1,6 +1,7 @@
-package nomadlist;
+package nomadlist.PageComponents;
 
 import WebDriver.Component;
+import nomadlist.landing.GridCities;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -9,7 +10,7 @@ public class NavSearch extends Component {
     @FindBy(className = "search")
     WebElement searchInput;
 
-    protected NavSearch(WebElement container) {
+    public NavSearch(WebElement container) {
         super(container);
     }
 

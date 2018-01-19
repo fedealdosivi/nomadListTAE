@@ -1,7 +1,8 @@
 package nomadlist;
 
-import WebDriver.Page;
 import WebDriver.WebTest;
+import nomadlist.PageComponents.Cities;
+import nomadlist.landing.HomePage;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.not;
