@@ -1,6 +1,6 @@
 package nomadlist.landing;
 
-import nomadlist.PageComponents.Cities;
+import nomadlist.PageComponents.City;
 import nomadlist.NomadListPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,9 +15,14 @@ public class GridCities extends NomadListPage {
     @FindBy(css="div.item.show > div.container.lazyloaded")
     private List<WebElement> cities;
 
-    public List<Cities> getCities(){
+    /**
+     * Converts and return a list of cities
+     * found by the locator css
+     * @return List
+     */
+    public List<City> getCities(){
         waitFor(visibilityOfAllElements(cities));
-        return cities.stream().map(Cities::new).collect(toList());
+        return cities.stream().map(City::new).collect(toList());
     }
 
 

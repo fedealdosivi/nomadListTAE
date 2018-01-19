@@ -14,6 +14,11 @@ public class NavSearch extends Component {
         super(container);
     }
 
+    /**
+     *
+     * @param searchCity
+     * @return GridCities
+     */
     public GridCities search(String searchCity){
         type(searchInput,searchCity);
         return new GridCities();

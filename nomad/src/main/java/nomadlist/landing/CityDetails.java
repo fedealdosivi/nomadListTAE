@@ -15,11 +15,21 @@ public class CityDetails extends NomadListPage {
     @FindBy(css = ".tabs")
     private WebElement navCity;
 
+    /**
+     * Return the name of the city
+     * found by he locator className
+     * @return String
+     */
     public String getName(){
         waitFor(visibilityOf(cityName));
         return getText(cityName);
     }
 
+    /**
+     * Returns the navbar of the city
+     * that have been clicked
+     * @return NavCityDetails
+     */
     public NavCityDetails getNavCityDetails(){
         waitFor(visibilityOf(navCity));
         return new NavCityDetails(navCity);

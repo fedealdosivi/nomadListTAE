@@ -1,7 +1,7 @@
 package nomadlist;
 
 import WebDriver.WebTest;
-import nomadlist.PageComponents.Cities;
+import nomadlist.PageComponents.City;
 import nomadlist.landing.HomePage;
 import org.junit.Test;
 
@@ -25,7 +25,7 @@ public class TestNomadListIndex extends WebTest<HomePage>{
 
     @Test
     public void TestSelectCityFromHome(){
-        Cities city=getInitialPage()
+        City city=getInitialPage()
                 .getCities()
                 .get(1);
 
@@ -34,7 +34,7 @@ public class TestNomadListIndex extends WebTest<HomePage>{
 
     @Test
     public void TestSelectCityUsingScroll(){
-        Cities city=getInitialPage()
+        City city=getInitialPage()
                 .getBottomCities()
                 .get(19);
 
@@ -43,7 +43,7 @@ public class TestNomadListIndex extends WebTest<HomePage>{
 
     @Test
     public void TestCityPeople(){
-        Cities city=getInitialPage()
+        City city=getInitialPage()
                 .getCities()
                 .get(1);
 
@@ -53,7 +53,7 @@ public class TestNomadListIndex extends WebTest<HomePage>{
 
     @Test
     public void TestSearchArgentinaCitiesAndSelect(){
-            Cities city = getInitialPage()
+            City city = getInitialPage()
                     .getNavSearch()
                     .search("Argentina")
                     .getCities()

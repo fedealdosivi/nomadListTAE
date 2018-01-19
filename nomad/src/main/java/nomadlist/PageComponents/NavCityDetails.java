@@ -16,6 +16,12 @@ public class NavCityDetails extends Component {
         super(container);
     }
 
+    /**
+     * Select from the navBar the option
+     * choosed by position
+     * @param optionTab
+     * @return CityDetailsTabSelected
+     */
     public CityDetailsTabSelected selectTab(Tabs optionTab){
         switch (optionTab){
             case SCORES:

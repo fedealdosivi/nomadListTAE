@@ -11,6 +11,11 @@ public class CityDetailsTabSelected extends NomadListPage {
     @FindBy(css = "#people-here-now h3")
     private WebElement cantNomads;
 
+    /**
+     * Returns the quantity and other info
+     * of the nomads that were in that city
+     * @return String
+     */
     public String getNomads(){
         waitFor(visibilityOf(cantNomads));
         return getText(cantNomads);

@@ -1,6 +1,6 @@
 package nomadlist.landing;
 
-import nomadlist.PageComponents.Cities;
+import nomadlist.PageComponents.City;
 import nomadlist.PageComponents.NavSearch;
 import nomadlist.NomadListPage;
 import org.openqa.selenium.WebElement;
@@ -11,7 +11,6 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElements;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 public class HomePage extends NomadListPage {
 
@@ -27,20 +26,30 @@ public class HomePage extends NomadListPage {
     @FindBy(css = ".infinity-scroll.loading_spinner")
     private WebElement scroll;
 
+    /**
+     * Returns the navSearch component which is used
+     * to input and search cities
+     * @return NAVSEARCH
+     */
     public NavSearch getNavSearch(){
         return new NavSearch(searchBar);
     }
 
-    public List<Cities> getCities(){
+    /**
+     * Converts and return a list of cities
+     * found by the locator css
+     * @return List
+     */
+    public List<City> getCities(){
         waitFor(visibilityOfAllElements(cities));
-        return cities.stream().map(Cities::new).collect(toList());
+        return cities.stream().map(City::new).collect(toList());
     }
 
-    public List<Cities> getBottomCities(){
+    public List<City> getBottomCities(){
 
         waitFor(visibilityOf(scroll));
         waitFor(visibilityOfAllElements(cities));
-        return cities.stream().map(Cities::new).collect(toList());
+        return cities.stream().map(City::new).collect(toList());
     }
 
 }
