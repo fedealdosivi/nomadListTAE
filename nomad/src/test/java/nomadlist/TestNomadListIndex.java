@@ -20,8 +20,18 @@ public class TestNomadListIndex extends WebTest<HomePage>{
         return "https://nomadlist.com/";
     }
 
+
     @Test
-    public void TestSearchArgentinaCities(){
+    public void TestSelectCityFromHome(){
+        Cities city=getInitialPage()
+                .getCities()
+                .get(1);
+
+        assertThat("City has a name",city.select().getName(),not(isEmptyString()));
+    }
+
+    @Test
+    public void TestSearchArgentinaCitiesAndSelect(){
             Cities city = getInitialPage()
                     .getNavSearch()
                     .search("Argentina")
