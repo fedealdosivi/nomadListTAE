@@ -40,11 +40,10 @@ public class TestNomadListIndex extends WebTest<HomePage>{
                 .getCities()
                 .get(4);
 
-        String cantNomads=city.select()
+        city.select()
                 .getNavCityDetails()
                 .selectTab(FORUM)
-                .getNomads();
-        assertThat("is not Empty",cantNomads,not(isEmptyString()));
+                .selectForumPost(1);
     }
 
     @Test
