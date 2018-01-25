@@ -8,7 +8,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public class CityDetailsTabSelected extends NomadListPage {
 
-    @FindBy(css = "#people-here-now h3")
+    @FindBy(xpath = "//*[@id=\"body\"]/div[1]/div/div[3]/div[3]/div/div[4]/div/h3[1]")
     private WebElement cantNomads;
 
     /**

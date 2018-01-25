@@ -5,10 +5,12 @@ import nomadlist.PageComponents.City;
 import nomadlist.landing.HomePage;
 import org.junit.Test;
 
+import static nomadlist.PageComponents.NavCityDetails.Tabs.FORUM;
 import static nomadlist.PageComponents.NavCityDetails.Tabs.PEOPLE;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.isEmptyString;
+import static org.junit.Assert.assertEquals;
 
 public class TestNomadListIndex extends WebTest<HomePage>{
 
@@ -37,15 +39,12 @@ public class TestNomadListIndex extends WebTest<HomePage>{
         City city=getInitialPage()
                 .getCities()
                 .get(4);
-    }
 
-    @Test
-    public void TestSelectCityUsingScroll(){
-        City city=getInitialPage()
-                .getBottomCities()
-                .get(19);
-
-        assertThat("City has a name",city.select().getName(),not(isEmptyString()));
+        String cantNomads=city.select()
+                .getNavCityDetails()
+                .selectTab(FORUM)
+                .getNomads();
+        assertThat("is not Empty",cantNomads,not(isEmptyString()));
     }
 
     @Test
@@ -56,6 +55,15 @@ public class TestNomadListIndex extends WebTest<HomePage>{
 
         assertThat("City has nomads",
                 city.select().getNavCityDetails().selectTab(PEOPLE).getNomads(),not(isEmptyString()));
+    }
+
+    @Test
+    public void TestSelectCityUsingScroll(){
+        City city=getInitialPage()
+                .getBottomCities()
+                .get(19);
+
+        assertThat("City has a name",city.select().getName(),not(isEmptyString()));
     }
 
     @Test

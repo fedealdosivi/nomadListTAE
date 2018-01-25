@@ -9,7 +9,7 @@ import java.util.List;
 
 public class NavCityDetails extends Component {
 
-    @FindBy(css = ".tabs.ul > h3")
+    @FindBy(css = "ul:first-of-type > h3")
     private List<WebElement> tabs;
 
     public NavCityDetails(WebElement container) {
