@@ -33,6 +33,13 @@ public class TestNomadListIndex extends WebTest<HomePage>{
     }
 
     @Test
+    public void TestCityForum(){
+        City city=getInitialPage()
+                .getCities()
+                .get(4);
+    }
+
+    @Test
     public void TestSelectCityUsingScroll(){
         City city=getInitialPage()
                 .getBottomCities()

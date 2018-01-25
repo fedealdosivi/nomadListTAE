@@ -1,7 +1,9 @@
 package WebDriver;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.EdgeDriverManager;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
 import logging.Logging;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.HasCapabilities;
@@ -14,7 +16,8 @@ import static java.lang.String.format;
 
 public enum Browser implements Initializable, HasCapabilities, Logging {
 
-    CHROME {
+
+    CHOME{
         @Override
         public void initialize() {
             INITIALIZED.computeIfAbsent(ordinal(), n -> {
@@ -26,21 +29,6 @@ public enum Browser implements Initializable, HasCapabilities, Logging {
         @Override
         public Capabilities getCapabilities() {
             return DesiredCapabilities.chrome();
-        }
-    },
-
-    FIREFOX {
-        @Override
-        public void initialize() {
-            INITIALIZED.computeIfAbsent(ordinal(), n -> {
-                FirefoxDriverManager.getInstance().setup();
-                return true;
-            });
-        }
-
-        @Override
-        public Capabilities getCapabilities() {
-            return DesiredCapabilities.firefox();
         }
     };
 
