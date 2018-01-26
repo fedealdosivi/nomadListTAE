@@ -15,7 +15,7 @@ public class TestPrueba extends MultipleBrowsersTest<GoogleHome> {
 
     @Override
     protected String getInitialUrl() {
-        return "https://www.google.com.ar";
+        return "https://en.wikipedia.org/wiki/Main_Page";
     }
 
     @Test

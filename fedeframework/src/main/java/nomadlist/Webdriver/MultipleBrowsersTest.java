@@ -10,7 +10,9 @@ import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Arrays;
@@ -32,16 +34,20 @@ public abstract class MultipleBrowsersTest<T extends Page> {
     @Parameters(name = "{index}: {0}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] { { FirefoxDriver.class },
-                { ChromeDriver.class } });
+                { ChromeDriver.class },
+                {InternetExplorerDriver.class}
+        });
     }
 
     @Before
     public void setupTest() throws Exception {
         WebDriverManager.getInstance(driverClass).setup();
         driver = driverClass.newInstance();
-        Context.INSTANCE.setDriver(this.driver);
         wait=new WebDriverWait(driver, 30);
-        driver.manage().window().maximize();
+
+        Context.INSTANCE.setDriver(this.driver);
+        Context.INSTANCE.setWait(this.wait);
+
         driver.get(getInitialUrl());
     }
 
