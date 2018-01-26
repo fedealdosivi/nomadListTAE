@@ -1,16 +1,15 @@
 package nomadlist;
 
 import nomadlist.Webdriver.MultipleBrowsersTest;
-import nomadlist.Webdriver.Page;
-import nomadlist.landing.GoogleHome;
+import nomadlist.landing.WikipediaHome;
 import org.junit.Test;
 
-public class TestPrueba extends MultipleBrowsersTest<GoogleHome> {
+public class TestPrueba extends MultipleBrowsersTest<WikipediaHome> {
 
 
     @Override
-    protected GoogleHome getInitialPage() {
-        return new GoogleHome();
+    protected WikipediaHome getInitialPage() {
+        return new WikipediaHome();
     }
 
     @Override

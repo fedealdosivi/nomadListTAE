@@ -5,18 +5,18 @@ import org.openqa.selenium.support.FindBy;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
-public class GoogleHome extends GooglePage {
+public class WikipediaHome extends WikipediaPage {
     @FindBy(id = "searchInput")
     private WebElement searchInput;
 
     @FindBy(id = "searchButton")
     private WebElement searchBtn;
 
-    public GoogleResults doSearch(String search){
+    public WikipediaResults doSearch(String search){
         waitFor(visibilityOf(searchInput));
         waitFor(visibilityOf(searchBtn));
         searchInput.sendKeys(search);
         searchBtn.click();
-        return new GoogleResults();
+        return new WikipediaResults();
     }
 }
