@@ -8,6 +8,7 @@
   <modules>
     <module>nomad</module>
     <module>framework</module>
+      <module>fedeframework</module>
   </modules>
   <packaging>pom</packaging>
 
